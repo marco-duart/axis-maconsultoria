@@ -107,11 +107,18 @@ export const ActionButton = styled("button", {
   backgroundColor: "transparent",
   border: "1px solid $brandPrimary",
   color: "$brandPrimary",
-  padding: "10px 20px",
+  padding: "8px 12px",
   borderRadius: "$md",
   fontFamily: "$heading",
+  fontSize: "$xs",
   cursor: "pointer",
   transition: "all 0.3s",
+  whiteSpace: "nowrap",
+
+  "@md": {
+    padding: "10px 20px",
+    fontSize: "$sm",
+  },
 
   "&:hover": {
     backgroundColor: "$brandPrimary",
