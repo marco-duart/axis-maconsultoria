@@ -382,3 +382,111 @@ export const BrandCard = styled("div", {
   borderRadius: "8px",
   borderLeft: "2px solid $brandSecondary",
 });
+
+export const CommonSolutionsSection = styled("section", {
+  paddingY: "$8",
+  display: "flex",
+  flexDirection: "column",
+  gap: "$6",
+  scrollMarginTop: "100px",
+  borderTop: "1px solid $borderSubtle",
+});
+
+export const CommonSolutionsHeader = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$3",
+  maxWidth: "860px",
+
+  h2: {
+    fontSize: "$3xl",
+    lineHeight: "$short",
+  },
+});
+
+export const CommonSolutionsLead = styled("p", {
+  color: "$textLowContrast",
+  lineHeight: "$base",
+  maxWidth: "760px",
+});
+
+export const CommonSolutionsGrid = styled("div", {
+  display: "grid",
+  gap: "$4",
+
+  "@lg": {
+    gridTemplateColumns: "repeat(3, 1fr)",
+  },
+});
+
+export const CommonSolutionCard = styled("article", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$3",
+  padding: "$5",
+  backgroundColor: "$bgSecondary",
+  borderRadius: "$lg",
+  border: "1px solid $borderSubtle",
+  transition: "transform 0.3s ease, border-color 0.3s ease",
+
+  "&:hover": {
+    transform: "translateY(-4px)",
+    borderColor: "$brandPrimary",
+  },
+});
+
+export const CommonSolutionContext = styled("p", {
+  color: "$textLowContrast",
+  fontSize: "$sm",
+  lineHeight: "$base",
+});
+
+export const CommonSolutionLabel = styled("strong", {
+  display: "block",
+  fontFamily: "$mono",
+  fontSize: "$xs",
+  textTransform: "uppercase",
+  letterSpacing: "1px",
+  color: "$brandSecondary",
+  marginTop: "$2",
+});
+
+export const CommonSolutionList = styled("ul", {
+  listStyle: "none",
+  display: "flex",
+  flexDirection: "column",
+  gap: "$2",
+
+  li: {
+    fontSize: "$sm",
+    color: "$textLowContrast",
+    lineHeight: "$base",
+    display: "flex",
+    gap: "$2",
+
+    "&::before": {
+      content: '"→"',
+      color: "$brandPrimary",
+      fontFamily: "$mono",
+    },
+  },
+});
+
+export const CommonSolutionFooter = styled("div", {
+  marginTop: "$2",
+  borderTop: "1px solid $borderSubtle",
+  paddingTop: "$3",
+  display: "flex",
+  flexDirection: "column",
+  gap: "$2",
+
+  p: {
+    fontSize: "$sm",
+    color: "$textLowContrast",
+    lineHeight: "$base",
+  },
+
+  strong: {
+    color: "$textHighContrast",
+  },
+});

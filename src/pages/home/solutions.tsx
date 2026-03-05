@@ -43,7 +43,7 @@ export const Solutions = () => {
       <div style={{ textAlign: "left" }}>
         <S.Badge>Solutions Matrix</S.Badge>
         <h2 style={{ marginTop: "16px", fontSize: "2rem" }}>
-          Capacidades <span style={{ color: "#D4AF37" }}>Técnicas</span>
+          Especialidades da <span style={{ color: "#D4AF37" }}>M.A. AXIS</span>
         </h2>
       </div>
 

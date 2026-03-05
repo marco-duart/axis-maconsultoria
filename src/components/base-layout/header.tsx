@@ -8,7 +8,7 @@ export const Header = () => {
     "https://wa.me/5562994069668?text=Olá,%20vi%20o%20site%20da%20M.A.%20AXIS%20e%20gostaria%20de%20um%20diagnóstico.";
 
   useEffect(() => {
-    const sections = ["apresentacao", "solucoes", "sobre"];
+    const sections = ["apresentacao", "solucoes", "solucoes-comuns"];
 
     const observerOptions = {
       root: null,
@@ -86,11 +86,11 @@ export const Header = () => {
           Soluções
         </S.NavLink>
         <S.NavLink
-          href="#sobre"
-          active={activeSection === "sobre"}
-          onClick={(e) => handleScroll(e, "sobre")}
+          href="#solucoes-comuns"
+          active={activeSection === "solucoes-comuns"}
+          onClick={(e) => handleScroll(e, "solucoes-comuns")}
         >
-          O Especialista
+          Casos Reais
         </S.NavLink>
       </S.Nav>
 
@@ -101,7 +101,7 @@ export const Header = () => {
           target="_blank"
           style={{ textDecoration: "none" }}
         >
-          Falar com o Especialista
+          Fazer uma avaliação
         </S.ActionButton>
       </div>
     </S.HeaderContainer>
