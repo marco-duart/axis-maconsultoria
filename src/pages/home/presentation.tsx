@@ -1,5 +1,6 @@
 import * as S from "./styles";
 import { FaWhatsapp, FaArrowRight } from "react-icons/fa";
+import { trackEvent } from "../../utils/analytics";
 
 export const Presentation = () => {
   const WHATSAPP_URL =
@@ -27,6 +28,14 @@ export const Presentation = () => {
           target="_blank"
           rel="noopener noreferrer"
           variant="primary"
+          onClick={() =>
+            trackEvent({
+              event: "cta_click",
+              category: "engagement",
+              action: "whatsapp_contact",
+              label: "presentation_diagnostico",
+            })
+          }
         >
           <FaWhatsapp size={20} />
           Solicitar Diagnóstico
@@ -35,11 +44,18 @@ export const Presentation = () => {
         <S.ActionButton
           as="button"
           variant="secondary"
-          onClick={() =>
+          onClick={() => {
+            trackEvent({
+              event: "cta_click",
+              category: "engagement",
+              action: "view_methodology",
+              label: "presentation_metodologia",
+            });
+
             document
               .getElementById("metodologia")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
         >
           Ver Metodologia
           <FaArrowRight size={14} />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LogoAxis from "../logo-axis";
 import * as S from "./styles";
+import { trackEvent } from "../../utils/analytics";
 
 export const Header = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -39,6 +40,14 @@ export const Header = () => {
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
+
+    trackEvent({
+      event: "navigation_click",
+      category: "navigation",
+      action: "header_menu",
+      label: id,
+    });
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -54,7 +63,16 @@ export const Header = () => {
           gap: "12px",
           cursor: "pointer",
         }}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        onClick={() => {
+          trackEvent({
+            event: "navigation_click",
+            category: "navigation",
+            action: "header_logo",
+            label: "top",
+          });
+
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
       >
         <LogoAxis width={40} height={40} />
         <span
@@ -100,6 +118,14 @@ export const Header = () => {
           href={WHATSAPP_URL}
           target="_blank"
           style={{ textDecoration: "none" }}
+          onClick={() =>
+            trackEvent({
+              event: "cta_click",
+              category: "engagement",
+              action: "whatsapp_contact",
+              label: "header_avaliacao",
+            })
+          }
         >
           Fazer uma avaliação
         </S.ActionButton>

@@ -1,5 +1,6 @@
 import * as S from "./styles";
 import { FaWhatsapp } from "react-icons/fa";
+import { trackEvent } from "../../utils/analytics";
 
 export const CTASection = () => {
   const WHATSAPP_URL =
@@ -15,7 +16,19 @@ export const CTASection = () => {
         Não deixe sua infraestrutura ser o gargalo do seu faturamento. Vamos
         projetar o próximo nível da sua operação.
       </S.CTAParagraph>
-      <S.ActionButton href={WHATSAPP_URL} target="_blank" variant="primary">
+      <S.ActionButton
+        href={WHATSAPP_URL}
+        target="_blank"
+        variant="primary"
+        onClick={() =>
+          trackEvent({
+            event: "cta_click",
+            category: "engagement",
+            action: "whatsapp_contact",
+            label: "final_cta_consultoria",
+          })
+        }
+      >
         <FaWhatsapp size={20} />
         Iniciar Consultoria Agora
       </S.ActionButton>
