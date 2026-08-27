@@ -1,0 +1,204 @@
+import type { AxisSystem } from "./types";
+
+/**
+ * Portfólio de produtos da M.A. AXIS.
+ *
+ * Cada item é um SISTEMA, que pode ter várias INTERFACES (apps mobile, web,
+ * API, WhatsApp, etc). O caso mais completo hoje é o Mostraai, com 3 apps
+ * mobile + 1 web + backend.
+ *
+ * `featured: true` coloca o sistema no carrossel grande do topo do site —
+ * use só para os produtos que merecem mais destaque agora (hoje: Mostraai e
+ * Dita, como referência de preenchimento).
+ *
+ * IMAGENS: coloque os arquivos em `public/products/<slug>/` e referencie só
+ * o nome do arquivo em `media.icon` / `media.gallery[].file` (ver
+ * `src/data/media.ts` e `src/data/types.ts`). Sem imagens, o carrossel usa
+ * automaticamente um fallback com o ícone/inicial do produto.
+ *
+ * TODO (preencher/ajustar):
+ * - Nomes reais dos 3 apps mobile do Mostraai (estão como placeholder abaixo).
+ * - Links de Play Store / App Store de cada app (estão como "#").
+ * - Imagens reais em `public/products/mostraai/` e `public/products/dita/`
+ *   (as galerias abaixo estão vazias de propósito — preencha `media.gallery`).
+ * - Interfaces reais de Vox Obscura e Aptivon conforme forem definidas.
+ * - `accentColor` é opcional: usa as cores da marca (cyan/dourado/roxo) já
+ *   definidas em stitches.config.ts; troque se quiser uma cor própria por produto.
+ */
+export const axisSystems: AxisSystem[] = [
+  {
+    id: 1,
+    slug: "mostraai",
+    name: "Mostraai",
+    category: "Marketplace de Criadores",
+    tagline: "Sua vitrine digital, do jeito certo.",
+    description:
+      "Ecossistema onde criadores exibem e monetizam seus trabalhos com uma experiência mobile-first, hoje em fase beta com usuários reais.",
+    longDescription:
+      "O Mostraai é o produto mais maduro do nosso portfólio: um ecossistema completo, com apps próprios para criadores e público, plataforma web e backend dedicado, já validado com usuários reais em fase beta.",
+    status: "BETA",
+    featured: true,
+    technologies: ["React Native", "NestJS", "ReactJs", "PostgreSQL"],
+    highlights: [
+      "Onboarding em menos de 60 segundos",
+      "Ferramentas de monetização integradas",
+      "Analytics em tempo real para o criador",
+    ],
+    primaryLink: "https://mostraai.app.br",
+    accentColor: "$brandPrimary",
+    media: {
+      icon: undefined, // TODO: ex. "icon.png" dentro de public/products/mostraai/
+      gallery: [
+        // TODO: adicionar imagens reais, ex:
+        // { file: "screenshot-1.png", alt: "Feed de descoberta do Mostraai" },
+        // { file: "screenshot-2.png", alt: "Perfil de um criador no Mostraai" },
+      ],
+    },
+    interfaces: [
+      {
+        id: "mostraai-app-1",
+        label: "App Mobile 1 (nome pendente)",
+        platform: "mobile",
+        status: "BETA",
+        links: { playStore: "#", appStore: "#" },
+      },
+      {
+        id: "mostraai-app-2",
+        label: "App Mobile 2 (nome pendente)",
+        platform: "mobile",
+        status: "BETA",
+        links: { playStore: "#", appStore: "#" },
+      },
+      {
+        id: "mostraai-app-3",
+        label: "App Mobile 3 (nome pendente)",
+        platform: "mobile",
+        status: "BETA",
+        links: { playStore: "#", appStore: "#" },
+      },
+      {
+        id: "mostraai-web",
+        label: "Plataforma Web",
+        platform: "web",
+        status: "BETA",
+        links: { web: "https://mostraai.app.br" },
+      },
+      {
+        id: "mostraai-api",
+        label: "Backend / API",
+        platform: "api",
+        status: "BETA",
+      },
+    ],
+  },
+  {
+    id: 2,
+    slug: "vox-obscura",
+    name: "Vox Obscura",
+    category: "Entretenimento",
+    tagline: "Em desenvolvimento — em breve.",
+    description: "Entretenimento de uma forma jamais vista antes...",
+    status: "IN_DEVELOPMENT",
+    featured: false,
+    technologies: ["React Native", "NestJS", "PostgreSQL"],
+    highlights: ["Detalhes em breve"],
+    accentColor: "$brandAccent",
+    interfaces: [
+      {
+        id: "vox-obscura-app",
+        label: "App Mobile",
+        platform: "mobile",
+        status: "IN_DEVELOPMENT",
+        links: { playStore: "#", appStore: "#" },
+      },
+      {
+        id: "vox-obscura-api",
+        label: "Backend / API",
+        platform: "api",
+        status: "IN_DEVELOPMENT",
+      },
+    ],
+  },
+  {
+    id: 3,
+    slug: "aptivon",
+    name: "Aptivon",
+    category: "HR Tech",
+    tagline: "Gestão de RH nunca foi tão fácil.",
+    description:
+      "Plataforma que simplifica a gestão de recursos humanos, desde recrutamento até avaliação de desempenho.",
+    status: "IN_DEVELOPMENT",
+    featured: false,
+    technologies: ["Ruby on Rails", "ReactJs", "PostgreSQL"],
+    highlights: [
+      "Testes customizados",
+      "Gestão de desempenho simplificada",
+      "Relatórios detalhados para a equipe de RH",
+    ],
+    accentColor: "$brandSecondary",
+    interfaces: [
+      {
+        id: "aptivon-web",
+        label: "Painel Web",
+        platform: "web",
+        status: "IN_DEVELOPMENT",
+        links: { url: "#" },
+      },
+      {
+        id: "aptivon-api",
+        label: "Backend / API",
+        platform: "api",
+        status: "IN_DEVELOPMENT",
+      },
+    ],
+  },
+  {
+    id: 4,
+    slug: "dita",
+    name: "Dita",
+    category: "ERP Conversacional",
+    tagline: "Todo controle a partir do WhatsApp do seu negócio.",
+    description:
+      "ERP orientado a conversas no WhatsApp, onde é gerado todo o controle do seu negócio.",
+    longDescription:
+      "O Dita leva o controle do seu negócio para onde você já está: o WhatsApp. Financeiro, estoque e relatórios ficam acessíveis por conversa, com um painel web por trás para a visão completa da operação.",
+    status: "IN_DEVELOPMENT",
+    featured: true,
+    technologies: ["Ruby on Rails", "NextJs", "PostgreSQL"],
+    highlights: [
+      "Controle financeiro integrado",
+      "Gestão de estoque simplificada",
+      "Relatórios detalhados para o gestor",
+    ],
+    accentColor: "$brandPrimary",
+    media: {
+      icon: undefined, // TODO: ex. "icon.png" dentro de public/products/dita/
+      gallery: [
+        // TODO: adicionar imagens reais, ex:
+        // { file: "screenshot-1.png", alt: "Conversa de controle financeiro no Dita" },
+      ],
+    },
+    interfaces: [
+      {
+        id: "dita-whatsapp",
+        label: "Bot WhatsApp",
+        platform: "whatsapp",
+        status: "IN_DEVELOPMENT",
+        links: { url: "#" },
+      },
+      {
+        id: "dita-web",
+        label: "Painel Web",
+        platform: "web",
+        status: "IN_DEVELOPMENT",
+        links: { url: "#" },
+      },
+      {
+        id: "dita-api",
+        label: "Backend / API",
+        platform: "api",
+        status: "IN_DEVELOPMENT",
+      },
+    ],
+  },
+];
