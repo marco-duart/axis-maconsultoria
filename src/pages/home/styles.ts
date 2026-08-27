@@ -144,69 +144,6 @@ export const ActionButton = styled("a", {
   },
 });
 
-export const AboutSection = styled("section", {
-  paddingY: "$8",
-  display: "grid",
-  gap: "$6",
-  alignItems: "center",
-  borderTop: "1px solid $borderSubtle",
-  scrollMarginTop: "100px",
-
-  "@md": {
-    gridTemplateColumns: "1fr 1.2fr",
-    gap: "$8",
-    paddingY: "$8",
-  },
-});
-
-export const AboutImageContainer = styled("div", {
-  position: "relative",
-  borderRadius: "$lg",
-  border: "1px solid $brandSecondary",
-  padding: "$2",
-  backgroundColor: "$bgSecondary",
-
-  img: {
-    width: "100%",
-    height: "auto",
-    borderRadius: "$md",
-    filter: "contrast(1.1) brightness(0.9)",
-    display: "block",
-  },
-
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: "-15px",
-    left: "-15px",
-    width: "40px",
-    height: "40px",
-    borderTop: "2px solid $brandPrimary",
-    borderLeft: "2px solid $brandPrimary",
-  },
-});
-
-export const AboutContent = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  gap: "$4",
-});
-
-export const Signature = styled("div", {
-  marginTop: "$4",
-  fontFamily: "$mono",
-  fontSize: "$sm",
-  color: "$brandSecondary",
-  display: "flex",
-  flexDirection: "column",
-  gap: "4px",
-
-  span: {
-    color: "$textLowContrast",
-    fontSize: "$xs",
-  },
-});
-
 export const MethodSection = styled("section", {
   paddingY: "$8",
   backgroundColor: "$bgSecondary",
@@ -370,17 +307,6 @@ export const CTAParagraph = styled("p", {
   marginBottom: "$4",
   maxWidth: "600px",
   marginX: "auto",
-});
-
-export const BrandCard = styled("div", {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "16px",
-  margin: "24px 0",
-  padding: "16px",
-  backgroundColor: "rgba(212, 175, 55, 0.05)",
-  borderRadius: "8px",
-  borderLeft: "2px solid $brandSecondary",
 });
 
 export const CommonSolutionsSection = styled("section", {
