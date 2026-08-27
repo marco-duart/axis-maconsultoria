@@ -6,10 +6,10 @@ import { trackEvent } from "../../utils/analytics";
 export const Header = () => {
   const [activeSection, setActiveSection] = useState("");
   const WHATSAPP_URL =
-    "https://wa.me/5562994069668?text=Olá,%20vi%20o%20site%20da%20M.A.%20AXIS%20e%20gostaria%20de%20um%20diagnóstico.";
+    "https://wa.me/5562994069668?text=Olá,%20vi%20o%20site%20da%20M.A.%20AXIS%20e%20gostaria%20de%20saber%20mais.";
 
   useEffect(() => {
-    const sections = ["apresentacao", "solucoes", "solucoes-comuns"];
+    const sections = ["apresentacao", "destaques", "produtos", "consultoria"];
 
     const observerOptions = {
       root: null,
@@ -97,18 +97,25 @@ export const Header = () => {
           Início
         </S.NavLink>
         <S.NavLink
-          href="#solucoes"
-          active={activeSection === "solucoes"}
-          onClick={(e) => handleScroll(e, "solucoes")}
+          href="#destaques"
+          active={activeSection === "destaques"}
+          onClick={(e) => handleScroll(e, "destaques")}
         >
-          Soluções
+          Destaques
         </S.NavLink>
         <S.NavLink
-          href="#solucoes-comuns"
-          active={activeSection === "solucoes-comuns"}
-          onClick={(e) => handleScroll(e, "solucoes-comuns")}
+          href="#produtos"
+          active={activeSection === "produtos"}
+          onClick={(e) => handleScroll(e, "produtos")}
         >
-          Casos Reais
+          Produtos
+        </S.NavLink>
+        <S.NavLink
+          href="#consultoria"
+          active={activeSection === "consultoria"}
+          onClick={(e) => handleScroll(e, "consultoria")}
+        >
+          Consultoria
         </S.NavLink>
       </S.Nav>
 
@@ -123,11 +130,11 @@ export const Header = () => {
               event: "cta_click",
               category: "engagement",
               action: "whatsapp_contact",
-              label: "header_avaliacao",
+              label: "header_contato",
             })
           }
         >
-          Fazer uma avaliação
+          Falar com a gente
         </S.ActionButton>
       </div>
     </S.HeaderContainer>
