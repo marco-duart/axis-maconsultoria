@@ -2,9 +2,9 @@ import { Presentation } from "./presentation";
 import { FeaturedSpotlight } from "./featured-spotlight";
 import { Products } from "./products";
 import { Methodology } from "./methodology";
-import { Solutions } from "./solutions";
-import { CTASection } from "./cta-section";
+import { Consulting } from "./consulting";
 import { CommonSolutions } from "./common-solutions";
+import { CTASection } from "./cta-section";
 
 export const Home = () => {
   return (
@@ -13,7 +13,7 @@ export const Home = () => {
       <FeaturedSpotlight />
       <Products />
       <Methodology />
-      <Solutions />
+      <Consulting />
       <CommonSolutions />
       <CTASection />
     </>

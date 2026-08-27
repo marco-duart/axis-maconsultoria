@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { FaCode, FaCloudUploadAlt, FaShieldAlt } from "react-icons/fa";
 
-export const Solutions = () => {
+export const Consulting = () => {
   const services = [
     {
       icon: <FaCode size={24} />,
@@ -39,12 +39,25 @@ export const Solutions = () => {
   ];
 
   return (
-    <S.SolutionsSection id="solucoes">
+    <S.SolutionsSection id="consultoria">
       <div style={{ textAlign: "left" }}>
-        <S.Badge>Solutions Matrix</S.Badge>
+        <S.Badge>Sob Demanda</S.Badge>
         <h2 style={{ marginTop: "16px", fontSize: "2rem" }}>
-          Especialidades da <span style={{ color: "#D4AF37" }}>M.A. AXIS</span>
+          Quando seu projeto precisa de{" "}
+          <span style={{ color: "#00D1FF" }}>algo sob medida</span>
         </h2>
+        <p
+          style={{
+            marginTop: "12px",
+            maxWidth: "700px",
+            color: "#8899A6",
+            lineHeight: 1.6,
+          }}
+        >
+          Nem todo problema cabe em um produto pronto. Para esses casos,
+          seguimos disponíveis como consultoria de engenharia — do
+          diagnóstico à entrega.
+        </p>
       </div>
 
       <S.SolutionsGrid>
