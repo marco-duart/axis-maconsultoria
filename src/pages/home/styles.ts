@@ -614,3 +614,157 @@ export const CommonSolutionFooter = styled("div", {
     color: "$textHighContrast",
   },
 });
+
+export const SpotlightSection = styled("section", {
+  paddingY: "$8",
+  display: "flex",
+  flexDirection: "column",
+  gap: "$6",
+  scrollMarginTop: "100px",
+});
+
+export const SpotlightCard = styled("div", {
+  position: "relative",
+  display: "grid",
+  gap: "$6",
+  padding: "$5",
+  backgroundColor: "$bgSecondary",
+  borderRadius: "$lg",
+  border: "1px solid $borderSubtle",
+  borderTop: "3px solid $brandPrimary",
+
+  "@md": {
+    gridTemplateColumns: "1.1fr 1fr",
+    padding: "$8",
+  },
+});
+
+export const SpotlightVisual = styled("div", {
+  position: "relative",
+  borderRadius: "$md",
+  overflow: "hidden",
+  minHeight: "260px",
+  backgroundColor: "$bgPrimary",
+  border: "1px solid $borderSubtle",
+
+  "@md": {
+    minHeight: "100%",
+  },
+});
+
+export const SpotlightImage = styled("img", {
+  position: "absolute",
+  inset: 0,
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  animation: `${reveal} 0.4s ease-out`,
+});
+
+export const SpotlightPlaceholder = styled("div", {
+  position: "absolute",
+  inset: 0,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontFamily: "$heading",
+  fontSize: "$5xl",
+  fontWeight: "$black",
+
+  img: {
+    objectFit: "contain",
+  },
+});
+
+export const SpotlightImageDots = styled("div", {
+  position: "absolute",
+  bottom: "$3",
+  left: "50%",
+  transform: "translateX(-50%)",
+  display: "flex",
+  gap: "6px",
+});
+
+export const SpotlightImageDot = styled("span", {
+  display: "block",
+  width: "6px",
+  height: "6px",
+  borderRadius: "$full",
+  backgroundColor: "rgba(255, 255, 255, 0.3)",
+
+  variants: {
+    active: {
+      true: { backgroundColor: "$brandPrimary" },
+    },
+  },
+});
+
+export const SpotlightContent = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$3",
+});
+
+export const SpotlightActions = styled("div", {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "$3",
+  marginTop: "$2",
+});
+
+export const SpotlightNav = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "$4",
+
+  "@md": {
+    gridColumn: "1 / -1",
+  },
+});
+
+export const SpotlightDots = styled("div", {
+  display: "flex",
+  gap: "$2",
+});
+
+export const SpotlightDot = styled("button", {
+  width: "10px",
+  height: "10px",
+  borderRadius: "$full",
+  border: "1px solid $borderSubtle",
+  backgroundColor: "transparent",
+  cursor: "pointer",
+  padding: 0,
+  transition: "all 0.2s ease",
+
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "$brandPrimary",
+        borderColor: "$brandPrimary",
+        boxShadow: "$glow",
+      },
+    },
+  },
+});
+
+export const SpotlightArrow = styled("button", {
+  width: "32px",
+  height: "32px",
+  flexShrink: 0,
+  borderRadius: "$full",
+  border: "1px solid $borderSubtle",
+  backgroundColor: "transparent",
+  color: "$textHighContrast",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  cursor: "pointer",
+  transition: "all 0.2s ease",
+
+  "&:hover": {
+    borderColor: "$brandPrimary",
+    color: "$brandPrimary",
+  },
+});

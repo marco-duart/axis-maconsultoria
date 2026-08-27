@@ -1,4 +1,5 @@
 import { Presentation } from "./presentation";
+import { FeaturedSpotlight } from "./featured-spotlight";
 import { Products } from "./products";
 import { Methodology } from "./methodology";
 import { Solutions } from "./solutions";
@@ -9,6 +10,7 @@ export const Home = () => {
   return (
     <>
       <Presentation />
+      <FeaturedSpotlight />
       <Products />
       <Methodology />
       <Solutions />
