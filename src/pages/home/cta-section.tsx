@@ -4,17 +4,18 @@ import { trackEvent } from "../../utils/analytics";
 
 export const CTASection = () => {
   const WHATSAPP_URL =
-    "https://wa.me/5562994069668?text=Olá,%20li%20sobre%20o%20Método%20AXIS%20e%20gostaria%20de%20aplicá-lo%20no%20meu%20projeto.";
+    "https://wa.me/5562994069668?text=Olá,%20vi%20o%20portfólio%20de%20produtos%20da%20M.A.%20AXIS%20e%20quero%20saber%20mais.";
 
   return (
     <S.FinalCTASection id="cta">
       <h2 style={{ marginBottom: "16px" }}>
-        Pronto para alinhar sua tecnologia ao seu{" "}
+        Quer testar um produto ou falar sobre o seu{" "}
         <span>Eixo de Crescimento?</span>
       </h2>
       <S.CTAParagraph>
-        Não deixe sua infraestrutura ser o gargalo do seu faturamento. Vamos
-        projetar o próximo nível da sua operação.
+        Seja para experimentar o Mostraai, acompanhar os próximos lançamentos
+        ou tratar de um projeto sob medida — estamos a uma mensagem de
+        distância.
       </S.CTAParagraph>
       <S.ActionButton
         href={WHATSAPP_URL}
@@ -25,12 +26,12 @@ export const CTASection = () => {
             event: "cta_click",
             category: "engagement",
             action: "whatsapp_contact",
-            label: "final_cta_consultoria",
+            label: "final_cta",
           })
         }
       >
         <FaWhatsapp size={20} />
-        Iniciar Consultoria Agora
+        Falar com a M.A. AXIS
       </S.ActionButton>
     </S.FinalCTASection>
   );

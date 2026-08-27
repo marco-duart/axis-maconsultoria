@@ -50,10 +50,11 @@ export const CommonSolutions = () => {
     <S.CommonSolutionsSection id="solucoes-comuns">
       <S.CommonSolutionsHeader>
         <S.Badge>Cenários Mais Pedidos</S.Badge>
-        <h2>Soluções orientadas a problemas reais de operação</h2>
+        <h2>Como atuamos quando o projeto é sob medida</h2>
         <S.CommonSolutionsLead>
-          Estrutura de entrega pensada para empresas em crescimento que precisam
-          de tecnologia confiável para vender, operar e escalar sem improviso.
+          Estrutura de entrega usada nos projetos de consultoria — para
+          empresas que precisam de tecnologia confiável para vender, operar e
+          escalar sem improviso, fora do escopo dos nossos produtos prontos.
         </S.CommonSolutionsLead>
       </S.CommonSolutionsHeader>
 

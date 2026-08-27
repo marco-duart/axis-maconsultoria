@@ -14,8 +14,8 @@ export const Footer = () => {
             marginBottom: "24px",
           }}
         >
-          Engenharia de precisão e inteligência tecnológica para transformar o
-          impossível em sistemas de alta performance.
+          Produtos digitais prontos e consultoria de engenharia sob demanda,
+          com a mesma precisão técnica em cada linha de código.
         </p>
         <S.Copyright>
           © {new Date().getFullYear()} M.A. AXIS - Todos os direitos reservados.{" "}

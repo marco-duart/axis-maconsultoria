@@ -7,25 +7,25 @@ export const Methodology = () => {
       id: "01",
       icon: <FaSearch size={24} />,
       title: "Decifrar",
-      desc: "Análise profunda da infraestrutura atual para identificar gargalos invisíveis e débitos técnicos.",
+      desc: "Análise profunda do problema real do usuário para identificar o que vale a pena virar produto.",
     },
     {
       id: "02",
       icon: <FaCode size={24} />,
       title: "Arquitetar",
-      desc: "Desenho de soluções escaláveis sob os princípios SOLID e Clean Code, garantindo longevidade ao software.",
+      desc: "Desenho de soluções escaláveis sob os princípios SOLID e Clean Code, garantindo longevidade ao produto.",
     },
     {
       id: "03",
       icon: <FaCogs size={24} />,
       title: "Materializar",
-      desc: "Implementação rigorosa com ciclos de testes automatizados e integração contínua (CI/CD).",
+      desc: "Implementação rigorosa com ciclos de testes automatizados e integração contínua (CI/CD) em cada interface do sistema.",
     },
     {
       id: "04",
       icon: <FaRocket size={24} />,
       title: "Evoluir",
-      desc: "Monitoramento de performance e ajustes precisos para garantir que a tecnologia acompanhe a escala do negócio.",
+      desc: "Monitoramento de uso e performance para guiar o roadmap do produto com base em dados reais.",
     },
   ];
 
@@ -34,7 +34,7 @@ export const Methodology = () => {
       <div style={{ textAlign: "center" }}>
         <S.Badge>The Axis Method</S.Badge>
         <h2 style={{ marginTop: "16px", fontSize: "2rem" }}>
-          Engenharia com <span style={{ color: "#00D1FF" }}>Propósito</span>
+          Como construímos <span style={{ color: "#00D1FF" }}>nossos produtos</span>
         </h2>
       </div>
 

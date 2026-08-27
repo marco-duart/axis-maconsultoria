@@ -4,61 +4,63 @@ import { trackEvent } from "../../utils/analytics";
 
 export const Presentation = () => {
   const WHATSAPP_URL =
-    "https://wa.me/5562994069668?text=Olá,%20vi%20o%20site%20da%20M.A.%20AXIS%20e%20gostaria%20de%20um%20diagnóstico%20técnico.";
+    "https://wa.me/5562994069668?text=Olá,%20vi%20o%20site%20da%20M.A.%20AXIS%20e%20gostaria%20de%20saber%20mais.";
 
   return (
     <S.PresentationSection id="apresentacao">
       <S.BackgroundEffect />
 
-      <S.Badge>Sistemas de Alta Performance</S.Badge>
+      <S.Badge>Produtos & Engenharia de Software</S.Badge>
 
       <S.Title>
-        Deciframos a complexidade.
-        <span>Arquitetamos o Sucesso.</span>
+        Soluções prontas para o seu negócio decolar.
+        <span>Da ideia ao produto no ar.</span>
       </S.Title>
 
       <S.Subtitle>
-        Consultoria em TI e desenvolvimento de software para empresas que buscam
-        o equilíbrio perfeito entre precisão técnica e escala financeira.
+        A M.A. AXIS projeta e opera produtos digitais próprios — apps, web e
+        integrações — prontos para resolver problemas reais. Precisa de algo
+        sob medida? Também seguimos disponíveis como consultoria de
+        engenharia.
       </S.Subtitle>
 
       <S.CTAGroup>
         <S.ActionButton
+          as="button"
+          variant="primary"
+          onClick={() => {
+            trackEvent({
+              event: "cta_click",
+              category: "engagement",
+              action: "view_products",
+              label: "presentation_produtos",
+            });
+
+            document
+              .getElementById("destaques")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          Ver Nossos Produtos
+          <FaArrowRight size={14} />
+        </S.ActionButton>
+
+        <S.ActionButton
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          variant="primary"
+          variant="secondary"
           onClick={() =>
             trackEvent({
               event: "cta_click",
               category: "engagement",
               action: "whatsapp_contact",
-              label: "presentation_diagnostico",
+              label: "presentation_consultoria",
             })
           }
         >
           <FaWhatsapp size={20} />
-          Solicitar Diagnóstico
-        </S.ActionButton>
-
-        <S.ActionButton
-          as="button"
-          variant="secondary"
-          onClick={() => {
-            trackEvent({
-              event: "cta_click",
-              category: "engagement",
-              action: "view_methodology",
-              label: "presentation_metodologia",
-            });
-
-            document
-              .getElementById("metodologia")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Ver Metodologia
-          <FaArrowRight size={14} />
+          Consultoria Sob Demanda
         </S.ActionButton>
       </S.CTAGroup>
 
