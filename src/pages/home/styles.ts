@@ -472,6 +472,130 @@ export const CommonSolutionList = styled("ul", {
   },
 });
 
+export const ProductCardHeader = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "flex-start",
+  gap: "$3",
+});
+
+export const ProductCategory = styled("span", {
+  fontFamily: "$mono",
+  fontSize: "$xs",
+  color: "$textLowContrast",
+  textTransform: "uppercase",
+  letterSpacing: "1px",
+});
+
+export const ProductTagline = styled("p", {
+  fontSize: "$sm",
+  color: "$brandSecondary",
+  fontWeight: "$medium",
+});
+
+export const StatusBadge = styled("span", {
+  fontFamily: "$mono",
+  fontSize: "10px",
+  textTransform: "uppercase",
+  letterSpacing: "1px",
+  padding: "3px 8px",
+  borderRadius: "$full",
+  border: "1px solid currentColor",
+  whiteSpace: "nowrap",
+  flexShrink: 0,
+
+  variants: {
+    status: {
+      LIVE: {
+        color: "$brandPrimary",
+        backgroundColor: "rgba(0, 209, 255, 0.1)",
+      },
+      BETA: {
+        color: "$brandSecondary",
+        backgroundColor: "rgba(212, 175, 55, 0.1)",
+      },
+      IN_DEVELOPMENT: {
+        color: "$textLowContrast",
+        backgroundColor: "transparent",
+        borderStyle: "dashed",
+      },
+      COMING_SOON: {
+        color: "$brandAccent",
+        backgroundColor: "rgba(110, 68, 255, 0.1)",
+      },
+    },
+  },
+});
+
+export const InterfaceList = styled("div", {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "$2",
+  marginTop: "$2",
+});
+
+export const InterfaceBadge = styled("a", {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "6px",
+  fontSize: "$xs",
+  fontFamily: "$heading",
+  color: "$textHighContrast",
+  backgroundColor: "$bgPrimary",
+  border: "1px solid $borderSubtle",
+  padding: "6px 10px",
+  borderRadius: "$md",
+  textDecoration: "none",
+  transition: "all 0.2s ease",
+
+  "&:hover": {
+    borderColor: "$brandPrimary",
+    color: "$brandPrimary",
+  },
+
+  variants: {
+    disabled: {
+      true: {
+        opacity: 0.45,
+        cursor: "default",
+        pointerEvents: "none",
+      },
+    },
+  },
+});
+
+export const ProductFooter = styled("div", {
+  marginTop: "auto",
+  paddingTop: "$4",
+  display: "flex",
+  flexDirection: "column",
+  gap: "$3",
+  borderTop: "1px solid $borderSubtle",
+});
+
+export const ProductLinkButton = styled("a", {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "$2",
+  fontFamily: "$heading",
+  fontSize: "$sm",
+  fontWeight: "$bold",
+  color: "$bgPrimary",
+  backgroundColor: "$brandPrimary",
+  padding: "10px 16px",
+  borderRadius: "$md",
+  textDecoration: "none",
+  textTransform: "uppercase",
+  letterSpacing: "1px",
+  transition: "all 0.3s ease",
+
+  "&:hover": {
+    backgroundColor: "#00b8e6",
+    boxShadow: "$glow",
+  },
+});
+
 export const CommonSolutionFooter = styled("div", {
   marginTop: "$2",
   borderTop: "1px solid $borderSubtle",
