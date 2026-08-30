@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import * as S from "./styles";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { axisSystems } from "../../data/systems";
@@ -108,6 +109,22 @@ export const Products = () => {
                   <FaExternalLinkAlt size={12} />
                 </S.ProductLinkButton>
               ) : null}
+
+              <S.ActionButton
+                as={Link}
+                to={`/${system.slug}`}
+                variant="secondary"
+                onClick={() =>
+                  trackEvent({
+                    event: "product_click",
+                    category: "engagement",
+                    action: "product_page_link",
+                    label: system.slug,
+                  })
+                }
+              >
+                Ver página do produto
+              </S.ActionButton>
             </S.ProductFooter>
           </S.SolutionCard>
         ))}

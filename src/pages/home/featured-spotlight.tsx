@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import * as S from "./styles";
 import { FaChevronLeft, FaChevronRight, FaExternalLinkAlt } from "react-icons/fa";
 import { axisSystems } from "../../data/systems";
@@ -138,20 +139,18 @@ export const FeaturedSpotlight = () => {
             ) : null}
 
             <S.ActionButton
-              as="button"
+              as={Link}
+              to={`/${active.slug}`}
               variant="secondary"
-              onClick={() => {
+              onClick={() =>
                 trackEvent({
                   event: "spotlight_view_details",
                   category: "engagement",
                   action: active.slug,
-                });
-                document
-                  .getElementById(`produto-${active.slug}`)
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
+                })
+              }
             >
-              Ver detalhes
+              Ver página do produto
             </S.ActionButton>
           </S.SpotlightActions>
         </S.SpotlightContent>
