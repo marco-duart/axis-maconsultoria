@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { BaseLayout } from "../components/base-layout";
-import { Home } from "../pages";
+import { Home, ProductPage } from "../pages";
 
 export default function Router() {
   return (
@@ -8,6 +8,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<BaseLayout />}>
           <Route index element={<Home />} />
+          <Route path=":slug" element={<ProductPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
