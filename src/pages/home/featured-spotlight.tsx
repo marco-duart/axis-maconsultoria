@@ -4,76 +4,10 @@ import { FaChevronLeft, FaChevronRight, FaExternalLinkAlt } from "react-icons/fa
 import { axisSystems } from "../../data/systems";
 import { productAsset } from "../../data/media";
 import { STATUS_LABEL, buildInterfaceBadges, isRealLink } from "./interface-badges";
+import { SpotlightVisualPanel } from "./spotlight-visual-panel";
 import { trackEvent } from "../../utils/analytics";
 
 const AUTO_ADVANCE_MS = 7000;
-const IMAGE_ROTATE_MS = 3800;
-
-type GalleryImage = { file: string; alt: string };
-
-/**
- * Remonta (via `key={active.slug}` no chamador) sempre que o destaque ativo
- * muda, o que já reseta `imageIndex` para 0 sem precisar de um efeito extra
- * só para isso.
- */
-const SpotlightVisualPanel = ({
-  slug,
-  name,
-  gallery,
-  iconSrc,
-  accent,
-}: {
-  slug: string;
-  name: string;
-  gallery: GalleryImage[];
-  iconSrc?: string;
-  accent: string;
-}) => {
-  const [imageIndex, setImageIndex] = useState(0);
-
-  useEffect(() => {
-    if (gallery.length < 2) return;
-
-    const timer = setInterval(() => {
-      setImageIndex((prev) => (prev + 1) % gallery.length);
-    }, IMAGE_ROTATE_MS);
-
-    return () => clearInterval(timer);
-  }, [gallery.length]);
-
-  const currentImage = gallery[imageIndex];
-  const imageSrc = currentImage ? productAsset(slug, currentImage.file) : undefined;
-
-  return (
-    <S.SpotlightVisual>
-      {imageSrc ? (
-        <S.SpotlightImage key={imageSrc} src={imageSrc} alt={currentImage?.alt ?? name} />
-      ) : (
-        <S.SpotlightPlaceholder
-          style={{ background: `linear-gradient(160deg, ${accent}33, transparent)` }}
-        >
-          {iconSrc ? (
-            <img
-              src={iconSrc}
-              alt={`Ícone ${name}`}
-              style={{ width: 96, height: 96, borderRadius: 20 }}
-            />
-          ) : (
-            <span style={{ color: accent }}>{name.charAt(0)}</span>
-          )}
-        </S.SpotlightPlaceholder>
-      )}
-
-      {gallery.length > 1 ? (
-        <S.SpotlightImageDots>
-          {gallery.map((image, index) => (
-            <S.SpotlightImageDot key={image.file} active={index === imageIndex} />
-          ))}
-        </S.SpotlightImageDots>
-      ) : null}
-    </S.SpotlightVisual>
-  );
-};
 
 export const FeaturedSpotlight = () => {
   const featured = axisSystems.filter((system) => system.featured);
