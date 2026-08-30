@@ -43,6 +43,25 @@ export interface SystemMedia {
   gallery: SystemImage[];
 }
 
+/**
+ * Paleta usada para "retemar" a rota dedicada do produto (`/<slug>`)
+ * e o card de destaque — todas as cores em hex real (não tokens do tema
+ * global), já que cada produto pode fugir totalmente da paleta padrão da
+ * M.A. AXIS.
+ */
+export interface SystemTheme {
+  /** Cor de destaque principal (CTAs, links, glow, ícones ativos). */
+  primary: string;
+  /** Cor de destaque secundária (títulos de apoio, badges, detalhes). */
+  secondary: string;
+  /** Fundo da página do produto. */
+  background: string;
+  /** Fundo de cards/painéis dentro da página do produto. */
+  surface: string;
+  /** Cor do texto de alto contraste sobre `background`/`surface`. */
+  text: string;
+}
+
 export interface AxisSystem {
   id: number;
   slug: string;
@@ -50,7 +69,7 @@ export interface AxisSystem {
   category: string;
   tagline: string;
   description: string;
-  /** Texto mais longo, usado só no card grande de destaque. Se ausente, cai para `description`. */
+  /** Texto mais longo, usado só no card grande de destaque e na página do produto. Se ausente, cai para `description`. */
   longDescription?: string;
   status: SystemStatus;
   /** Marca o sistema como destaque: entra no carrossel grande no topo do site. */
@@ -59,6 +78,7 @@ export interface AxisSystem {
   highlights: string[];
   interfaces: SystemInterface[];
   primaryLink?: string;
-  accentColor?: string;
+  /** Tema de cores do produto — usado na rota `/<slug>` e como acento no carrossel de destaque. */
+  theme: SystemTheme;
   media?: SystemMedia;
 }

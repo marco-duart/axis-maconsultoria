@@ -11,10 +11,16 @@ import type { AxisSystem } from "./types";
  * use só para os produtos que merecem mais destaque agora (hoje: Mostraai e
  * Dita, como referência de preenchimento).
  *
+ * `theme` é obrigatório e alimenta a rota dedicada `/<slug>`
+ * (src/pages/product) e o acento do carrossel de destaque — são cores em hex
+ * puro (não tokens do tema global), para cada produto poder ter uma
+ * identidade visual própria. Ajuste para a paleta real de cada produto
+ * quando ela existir.
+ *
  * IMAGENS: coloque os arquivos em `public/products/<slug>/` e referencie só
  * o nome do arquivo em `media.icon` / `media.gallery[].file` (ver
- * `src/data/media.ts` e `src/data/types.ts`). Sem imagens, o carrossel usa
- * automaticamente um fallback com o ícone/inicial do produto.
+ * `src/data/media.ts` e `src/data/types.ts`). Sem imagens, o carrossel e a
+ * página do produto usam automaticamente um fallback com o ícone/inicial.
  *
  * TODO (preencher/ajustar):
  * - Nomes reais dos 3 apps mobile do Mostraai (estão como placeholder abaixo).
@@ -22,8 +28,6 @@ import type { AxisSystem } from "./types";
  * - Imagens reais em `public/products/mostraai/` e `public/products/dita/`
  *   (as galerias abaixo estão vazias de propósito — preencha `media.gallery`).
  * - Interfaces reais de Vox Obscura e Aptivon conforme forem definidas.
- * - `accentColor` é opcional: usa as cores da marca (cyan/dourado/roxo) já
- *   definidas em stitches.config.ts; troque se quiser uma cor própria por produto.
  */
 export const axisSystems: AxisSystem[] = [
   {
@@ -45,7 +49,13 @@ export const axisSystems: AxisSystem[] = [
       "Analytics em tempo real para o criador",
     ],
     primaryLink: "https://mostraai.app.br",
-    accentColor: "$brandPrimary",
+    theme: {
+      primary: "#00D1FF",
+      secondary: "#6E44FF",
+      background: "#04141A",
+      surface: "#0A1F26",
+      text: "#FFFFFF",
+    },
     media: {
       icon: undefined, // TODO: ex. "icon.png" dentro de public/products/mostraai/
       gallery: [
@@ -102,7 +112,13 @@ export const axisSystems: AxisSystem[] = [
     featured: false,
     technologies: ["React Native", "NestJS", "PostgreSQL"],
     highlights: ["Detalhes em breve"],
-    accentColor: "$brandAccent",
+    theme: {
+      primary: "#8B5CF6",
+      secondary: "#FF3D81",
+      background: "#120A1F",
+      surface: "#1B1230",
+      text: "#FFFFFF",
+    },
     interfaces: [
       {
         id: "vox-obscura-app",
@@ -135,7 +151,13 @@ export const axisSystems: AxisSystem[] = [
       "Gestão de desempenho simplificada",
       "Relatórios detalhados para a equipe de RH",
     ],
-    accentColor: "$brandSecondary",
+    theme: {
+      primary: "#D4AF37",
+      secondary: "#00D1FF",
+      background: "#1A1508",
+      surface: "#241C0D",
+      text: "#FFFFFF",
+    },
     interfaces: [
       {
         id: "aptivon-web",
@@ -170,7 +192,13 @@ export const axisSystems: AxisSystem[] = [
       "Gestão de estoque simplificada",
       "Relatórios detalhados para o gestor",
     ],
-    accentColor: "$brandPrimary",
+    theme: {
+      primary: "#25D366",
+      secondary: "#128C7E",
+      background: "#081A12",
+      surface: "#0F2A1D",
+      text: "#FFFFFF",
+    },
     media: {
       icon: undefined, // TODO: ex. "icon.png" dentro de public/products/dita/
       gallery: [

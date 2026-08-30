@@ -6,15 +6,6 @@ import { productAsset } from "../../data/media";
 import { STATUS_LABEL, buildInterfaceBadges, isRealLink } from "./interface-badges";
 import { trackEvent } from "../../utils/analytics";
 
-const ACCENT_HEX: Record<string, string> = {
-  $brandPrimary: "#00D1FF",
-  $brandSecondary: "#D4AF37",
-  $brandAccent: "#6E44FF",
-};
-
-const resolveAccent = (token?: string) =>
-  (token && ACCENT_HEX[token]) || ACCENT_HEX.$brandPrimary;
-
 const AUTO_ADVANCE_MS = 7000;
 const IMAGE_ROTATE_MS = 3800;
 
@@ -103,7 +94,7 @@ export const FeaturedSpotlight = () => {
 
   if (!active) return null;
 
-  const accent = resolveAccent(active.accentColor);
+  const accent = active.theme.primary;
   const iconSrc = productAsset(active.slug, active.media?.icon);
 
   const goTo = (index: number) => {
